@@ -1,9 +1,11 @@
-import "./App.css";
+import { Route, RouterProvider, createBrowserRouter } from "react-router-dom";
+import PostCreate from "./PostCeate";
 
 function App() {
   return (
-    <div>
-      <h1> This Is the React App</h1>
+    <div className="container">
+      <h1> Create Post</h1>
+      <PostCreate />
     </div>
   );
 }
