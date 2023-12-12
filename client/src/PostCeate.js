@@ -1,29 +1,30 @@
 import { useState } from "react";
-import { Form } from "react-router-dom";
+
 const PostCreate = () => {
-  const [name, setName] = useState("");
+  const [title, setTitle] = useState("");
+
   const onChangeHandler = (e) => {
-    console.log(e.target.value);
-    setName(e.target.value);
+    setTitle(e.target.value);
   };
-  const onclickHandler = (e) => {
+  const onClickHandler = (e) => {
     e.preventDefault();
-    console.log(name);
-    console.log(e.target.value);
+
+    console.log(title);
+    setTitle("");
   };
+
   return (
     <div>
       <form>
         <div className="form-group">
           <label> Title</label>
           <input
+            value={title}
             className="form-control"
             onChange={onChangeHandler}
-            value={name}
           />
         </div>
-        <button className="btn btn-primary" onClick={onclickHandler}>
-          {" "}
+        <button onClick={onClickHandler} className="btn btn-primary">
           Submit
         </button>
       </form>

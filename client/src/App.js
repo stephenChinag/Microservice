@@ -1,4 +1,3 @@
-import { Route, RouterProvider, createBrowserRouter } from "react-router-dom";
 import PostCreate from "./PostCeate";
 
 function App() {
