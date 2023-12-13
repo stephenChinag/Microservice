@@ -1,21 +1,24 @@
 import { useState } from "react";
-
+import axios from "axios";
 const PostCreate = () => {
   const [title, setTitle] = useState("");
 
   const onChangeHandler = (e) => {
     setTitle(e.target.value);
   };
-  const onClickHandler = (e) => {
+  const onClickHandler = async (e) => {
     e.preventDefault();
 
-    console.log(title);
+    await axios.post("http://localhost:4000/posts", {
+      title,
+    });
+
     setTitle("");
   };
 
   return (
     <div>
-      <form>
+      <form onSubmit={onClickHandler}>
         <div className="form-group">
           <label> Title</label>
           <input
@@ -24,9 +27,7 @@ const PostCreate = () => {
             onChange={onChangeHandler}
           />
         </div>
-        <button onClick={onClickHandler} className="btn btn-primary">
-          Submit
-        </button>
+        <button className="btn btn-primary">Submit</button>
       </form>
     </div>
   );

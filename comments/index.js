@@ -5,9 +5,9 @@ const express = require("express");
 const bosyParser = require("body-parser");
 const app = express();
 const { randomBytes } = require("crypto");
-
+const cors = require("cors");
 app.use(bosyParser.json());
-
+app.use(cors());
 const commentByPostId = {};
 
 app.get("/posts/:id/comments", (req, res) => {
