@@ -22,7 +22,6 @@ const CommentList = ({ postId }) => {
     </div>
   ));
 
-  console.log(comments);
   return <div> {listRenderComment}</div>;
 };
 
