@@ -1,4 +1,4 @@
-//PORT LISTENING
+/* PORT LISTENING  */
 
 const express = require("express");
 
@@ -14,7 +14,6 @@ const commentByPostId = {};
 
 app.get("/posts/:id/comments", (req, res) => {
   const comment = commentByPostId[req.params.id] || [];
-
   res.send(comment);
 });
 
