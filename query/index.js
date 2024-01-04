@@ -9,7 +9,7 @@ app.use(cors());
 
 const posts = {};
 
-app.get("/post", (req, res) => {
+app.get("/posts", (req, res) => {
   res.send(posts);
 });
 
@@ -32,5 +32,5 @@ app.post("/events", (req, res) => {
 });
 
 app.listen(4002, () => {
-  console.log("Query Is Listening ");
+  console.log("Query Is Listening @ 4002");
 });
