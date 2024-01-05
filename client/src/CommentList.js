@@ -1,11 +1,20 @@
 const CommentList = ({ comments }) => {
-  const renderedComment = comments.map((c) => (
-    <div key={c.id}>
-      <li> {c.content}</li>
-    </div>
-  ));
+  const renderedComment = comments.map((c) => {
+    let content;
+    if (c.status === "approved") {
+      content = c.content;
+    }
+    if (c.status === "pending") {
+      content = " The comment await approval";
+    }
+    if (c.status === "rejected") {
+      content = " This comment has been Rejected ";
+    }
 
-  return <div> {renderedComment}</div>;
+    <li key={c.id}>{content}</li>;
+  });
+
+  return <ul> {renderedComment}</ul>;
 };
 
 export default CommentList;
