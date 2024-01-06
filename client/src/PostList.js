@@ -25,10 +25,12 @@ const PostList = () => {
       <div className="card-body">
         <h3> {p.title}</h3>
         <CommentList comments={p.comments} />
+        {console.log(" Greeting from PostList" + p.comments)}
         <CommentCreate postId={p.id} />
       </div>
     </div>
   ));
+
   return (
     <div className="d-flex flex-roe flex-wrap justify-conten-between">
       {listRenderedPost}

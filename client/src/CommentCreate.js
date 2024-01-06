@@ -19,7 +19,7 @@ const CommentCreate = ({ postId }) => {
     <div>
       <form onSubmit={onSubmitHandler}>
         <div className="form-group">
-          <label> Comment</label>
+          <label> New Comment</label>
           <input
             value={content}
             onChange={onChangeandler}
