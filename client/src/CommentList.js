@@ -10,7 +10,7 @@ const CommentList = ({ comments }) => {
       content = "The comment await approval";
       console.log("pending");
     }
-    if (c.status === "rejected") {
+    if (c.status === "declined") {
       content = "This comment has been Rejected ";
       console.log("rejected");
     }
