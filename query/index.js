@@ -47,15 +47,15 @@ app.post("/events", (req, res) => {
 
 app.listen(4002, async () => {
   console.log("Query Is Listening @ 4002");
+  try {
+    const res = await axios.get("http://localhost:4005/events");
 
-  const res = await axios.get("http://localhost:4005/events");
-  if (!res) {
-    console.log("An Error Occur");
-  } else {
     for (let event of res.data) {
       console.log("Processing event ", event.type);
 
       handleEvent(event.type, event.data);
     }
+  } catch (error) {
+    console.log(error.message);
   }
 });
