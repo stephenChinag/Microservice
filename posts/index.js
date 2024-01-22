@@ -4,7 +4,7 @@ const { randomBytes } = require("crypto");
 const app = express();
 const cors = require("cors");
 const axios = require("axios");
-
+// kubectl log <pod_name>
 app.use(bodyParse.json());
 app.use(cors());
 
